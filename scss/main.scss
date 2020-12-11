@@ -1,0 +1,183 @@
+$gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+$pale-blue: hsl(243, 100%, 93%);
+$grayish-blue: hsl(229, 7%, 55%);
+$dark-blue: hsl(228, 56%, 26%);
+$very-dark-blue: hsl(229, 57%, 11%);
+$font: "Raleway", sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  color: white;
+  font-family: $font;
+  font-size: 1.4rem;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: $very-dark-blue;
+  background-image: url(/images/bg-desktop.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 4.2rem;
+}
+
+.interface {
+  border-radius: 1rem 33% 1rem 1rem;
+  background-color: $dark-blue;
+  padding: 4.2rem 6vw 4.2rem 4.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+
+  .btn-box {
+    display: flex;
+    gap: 1.4rem;
+
+    .btn {
+      border-radius: 20%;
+      background-color: $very-dark-blue;
+      display: flex;
+      align-items: center;
+      transition: 0.1s;
+      &:hover {
+        background-color: lighten($very-dark-blue, 8%);
+      }
+
+      img {
+        margin: 1.2rem;
+        width: 2.4rem;
+      }
+    }
+  }
+}
+
+.progress {
+  position: relative;
+  width: 50vh;
+  height: fit-content;
+  border-radius: 1rem;
+  background-color: $dark-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4.2rem;
+  color: $pale-blue;
+  z-index: 0;
+
+  &-text {
+    margin-bottom: 1.8rem;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &-bar {
+    position: relative;
+    width: 100%;
+    height: 1.8rem;
+    margin-bottom: 0.9rem;
+    border-radius: 1.8rem;
+    background-color: $very-dark-blue;
+
+    &::before {
+      position: absolute;
+      top: 0.3rem;
+      left: 0.3rem;
+      content: "";
+      width: 80%;
+      height: 1.2rem;
+      border-radius: 1.8rem;
+      background-image: linear-gradient(to right, $gradient);
+    }
+
+    &::after {
+      position: absolute;
+      top: 0.4rem;
+      left: calc(80% - 0.9rem);
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      border-radius: 1.8rem;
+      background-color: white;
+    }
+  }
+
+  &-limits {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+
+  &-bubble {
+    position: absolute;
+    bottom: 85%;
+    right: 3.6rem;
+    width: 30%;
+    height: 40%;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    color: $grayish-blue;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: "";
+      width: 30%;
+      height: 130%;
+      border-top-right-radius: 1rem;
+      background-color: whitesmoke;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%);
+      z-index: -10;
+    }
+
+    p:first-of-type {
+      color: $very-dark-blue;
+      font-size: 3.6rem;
+    }
+  }
+}
+
+.attribution {
+  margin-top: auto;
+  padding: 1.1rem;
+  text-align: center;
+  color: $pale-blue;
+  font-size: 1.1rem;
+}
+.attribution a {
+  text-decoration: none;
+  color: $grayish-blue;
+}
