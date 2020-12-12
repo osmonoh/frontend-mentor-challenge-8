@@ -29,6 +29,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 900px) {
+  .page {
+    background-image: url(/images/bg-mobile.png);
+    background-size: cover;
+  }
+}
 
 .main-container {
   margin-top: auto;
@@ -36,9 +42,14 @@ body {
   align-items: flex-end;
   gap: 4.2rem;
 }
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
 
 .interface {
-  border-radius: 1rem 33% 1rem 1rem;
+  border-radius: 1rem 10rem 1rem 1rem;
   background-color: #1d2c67;
   padding: 4.2rem 6vw 4.2rem 4.2rem;
   display: flex;
@@ -63,10 +74,15 @@ body {
   margin: 1.2rem;
   width: 2.4rem;
 }
+@media (max-width: 900px) {
+  .interface {
+    width: 100%;
+  }
+}
 
 .progress {
   position: relative;
-  width: 50vh;
+  width: 30vw;
   height: fit-content;
   border-radius: 1rem;
   background-color: #1d2c67;
@@ -120,14 +136,13 @@ body {
   position: absolute;
   bottom: 85%;
   right: 3.6rem;
-  width: 30%;
-  height: 40%;
   border-radius: 1rem;
   background-color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
+  padding: 1.8rem 3.6rem;
   color: #848794;
   text-transform: uppercase;
   font-size: 1rem;
@@ -145,9 +160,31 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%);
   z-index: -10;
 }
+@media (max-width: 900px) {
+  .progress-bubble::after {
+    display: none;
+  }
+}
 .progress-bubble p:first-of-type {
   color: #0c122c;
   font-size: 3.6rem;
+}
+@media (max-width: 900px) {
+  .progress-bubble {
+    bottom: -30%;
+    left: 25%;
+    right: 25%;
+  }
+}
+@media (max-width: 900px) {
+  .progress {
+    width: 70vw;
+  }
+}
+@media (max-width: 700px) {
+  .progress {
+    width: 90vw;
+  }
 }
 
 .attribution {
