@@ -1,6 +1,5 @@
 # Frontend Mentor - Fylo data storage component
 
-![Design preview for the Fylo data storage component coding challenge](./design/desktop-preview.jpg)
 
 This is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges), a very nice website for practicing skills for learners of frontend technologies. I spend a decent amount of time on these when I was learning CSS, SASS and principles of responsive design. I absolutely loved doing them! 
 
